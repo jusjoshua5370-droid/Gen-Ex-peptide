@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Gen Ex Peptides – Premium Research Compounds</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1a6fd4;
+  --blue-dark:#1559b0;
+  --blue-mid:#2580e8;
+  --blue-light:#e8f1fb;
+  --blue-pale:#f0f5fd;
+  --blue-border:#c5d9f5;
+  --cyan:#0ea5c9;
+  --ink:#0c1b2e;
+  --gray:#64748b;
+  --gray2:#94a3b8;
+  --gray3:#cbd5e1;
+  --off:#f8fafc;
+  --white:#ffffff;
+  --success:#059669;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--ink);line-height:1.65;overflow-x:hidden}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--off)}
+::-webkit-scrollbar-thumb{background:var(--blue);border-radius:2px}
+
+/* ANNOUNCE */
+.ann{background:var(--blue);overflow:hidden;padding:10px 0}
+.ann-track{display:flex;white-space:nowrap;animation:ticker 35s linear infinite}
+.ann-track:hover{animation-play-state:paused}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ann-item{display:inline-flex;align-items:center;gap:18px;padding:0 36px;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#fff}
+.ann-dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.35);flex-shrink:0}
+
+/* NAV */
+.nav{
+  position:sticky;top:0;z-index:1000;
+  height:72px;padding:0 2.5rem;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:24px;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--gray3);
+  box-shadow:0 1px 12px rgba(0,0,0,.06);
+}
+.nav-logo img{height:40px;object-fit:contain;display:block}
+.nav-links{display:flex;align-items:center;justify-content:center;gap:2px}
+.nav-links a{font-size:13px;font-weight:500;color:var(--gray);text-decoration:none;padding:7px 14px;border-radius:7px;transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--blue);background:var(--blue-light)}
+.nav-right{display:flex;align-items:center;justify-content:flex-end;gap:12px}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:10px 20px;border-radius:8px;white-space:nowrap;transition:background .2s,transform .15s;box-shadow:0 2px 10px rgba(26,111,212,.25)}
+.nav-cta:hover{background:var(--blue-dark);transform:translateY(-1px)}
+.nav-cta svg{width:13px;height:13px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.hamburger span{width:22px;height:2px;background:var(--ink);border-radius:2px;display:block}
+.mobile-menu{display:none;position:fixed;inset:0;z-index:1100;background:rgba(255,255,255,.98);backdrop-filter:blur(24px);flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:22px;font-weight:600;color:var(--ink);text-decoration:none;padding:14px 32px;border-radius:10px;transition:color .2s,background .2s}
+.mobile-menu a:hover{color:var(--blue);background:var(--blue-light)}
+.mobile-close{position:absolute;top:24px;right:24px;font-size:28px;cursor:pointer;color:var(--gray);background:none;border:none;font-family:inherit}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,var(--white) 0%,var(--blue-pale) 100%);padding:80px 2rem 100px;position:relative;overflow:hidden}
+.hero-dots{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.045;background-image:radial-gradient(circle,#1a6fd4 1px,transparent 1px);background-size:36px 36px}
+.hero-glow{position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 55% 50% at 75% 30%,rgba(26,111,212,.08) 0%,transparent 70%),radial-gradient(ellipse 35% 35% at 15% 75%,rgba(14,165,201,.06) 0%,transparent 65%)}
+.hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 440px;gap:80px;align-items:center;position:relative;z-index:1}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:52px}}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--blue-light);border:1px solid var(--blue-border);color:var(--blue);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:24px}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(38px,5.5vw,68px);font-weight:600;line-height:1.08;letter-spacing:-.025em;color:var(--ink);margin-bottom:12px}
+.hero h1 em{font-style:italic;color:var(--blue)}
+.hero-sub{font-size:15px;color:var(--gray);font-weight:300;line-height:1.7;max-width:520px;margin-bottom:36px}
+.hero-btns{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+.btn-primary{display:inline-flex;align-items:center;gap:9px;background:var(--blue);color:#fff;text-decoration:none;font-size:14px;font-weight:600;padding:14px 28px;border-radius:9px;box-shadow:0 4px 20px rgba(26,111,212,.3);transition:background .2s,transform .15s}
+.btn-primary:hover{background:var(--blue-dark);transform:translateY(-2px)}
+.btn-primary svg{width:15px;height:15px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;color:var(--blue);text-decoration:none;font-size:14px;font-weight:600;padding:14px 24px;border-radius:9px;border:1.5px solid var(--blue-border);transition:background .2s,border-color .2s,transform .15s}
+.btn-secondary:hover{background:var(--blue-light);border-color:var(--blue);transform:translateY(-2px)}
+.hero-trust{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:500;color:var(--gray)}
+.trust-item svg{width:16px;height:16px;stroke:var(--success);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* HERO CARD */
+.hero-card{background:var(--white);border-radius:20px;box-shadow:0 8px 48px rgba(26,111,212,.12),0 2px 8px rgba(0,0,0,.04);border:1px solid var(--blue-border);overflow:hidden}
+.hero-card-top{background:var(--blue);padding:28px 28px 24px}
+.hero-card-top h3{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:8px}
+.hero-card-top p{font-size:28px;font-weight:700;color:#fff;line-height:1.2}
+.hero-card-top span{font-size:13px;font-weight:400;color:rgba(255,255,255,.6);display:block;margin-top:4px}
+.hero-card-body{padding:24px 28px}
+.hc-row{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid var(--gray3)}
+.hc-row:last-child{border-bottom:none}
+.hc-label{font-size:13px;color:var(--gray)}
+.hc-val{font-size:13px;font-weight:700;color:var(--blue)}
+.hc-pass{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:#dcfce7;color:var(--success);padding:3px 9px;border-radius:100px}
+
+/* TRUST STRIP */
+.trust-strip{background:var(--off);border-top:1px solid var(--gray3);border-bottom:1px solid var(--gray3);padding:32px 2rem}
+.trust-strip-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}
+.trust-pill{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gray)}
+.trust-pill svg{width:18px;height:18px;stroke:var(--blue);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* WARN */
+.warn{background:#fffbeb;border-top:3px solid #fcd34d;border-bottom:1px solid #fde68a;padding:14px 2rem;text-align:center}
+.warn p{font-size:12px;font-weight:500;color:#92400e;max-width:900px;margin:0 auto;line-height:1.6}
+.warn strong{font-weight:700;color:#78350f}
+
+/* SHARED */
+.wrap{max-width:1140px;margin:0 auto;padding:0 2rem}
+section{padding:96px 0}
+.sec-alt{background:var(--off)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--blue);border-radius:2px}
+h2.title{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,46px);font-weight:600;line-height:1.1;letter-spacing:-.02em;color:var(--ink);margin-bottom:16px}
+h2.title em{font-style:italic;color:var(--blue)}
+.lead{font-size:15px;color:var(--gray);line-height:1.8;font-weight:300;max-width:600px}
+.divider{height:1px;background:var(--gray3)}
+
+/* ABOUT */
+.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+@media(max-width:768px){.about-layout{grid-template-columns:1fr;gap:48px}}
+.feat-list{margin-top:36px;display:flex;flex-direction:column;gap:14px}
+.feat{display:flex;align-items:flex-start;gap:14px;padding:18px 20px;background:var(--white);border:1px solid var(--gray3);border-radius:12px;transition:box-shadow .2s,border-color .2s}
+.feat:hover{box-shadow:0 4px 20px rgba(26,111,212,.1);border-color:var(--blue-border)}
+.feat-ico{width:38px;height:38px;flex-shrink:0;border-radius:10px;background:var(--blue-light);display:flex;align-items:center;justify-content:center}
+.feat-ico svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.feat h3{font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:3px}
+.feat p{font-size:12.5px;color:var(--gray);line-height:1.6}
+.stat-boxes{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:36px}
+.sbox{background:var(--white);border:1px solid var(--blue-border);border-radius:14px;padding:24px 20px;text-align:center}
+.sbox-n{font-family:'Playfair Display',serif;font-size:38px;font-weight:600;color:var(--blue);line-height:1;margin-bottom:6px}
+.sbox-l{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gray2)}
+
+/* PEPTIDES */
+.peptides-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:44px}
+@media(max-width:900px){.peptides-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.peptides-grid{grid-template-columns:repeat(2,1fr)}}
+.ptag{background:var(--white);border:1px solid var(--gray3);border-radius:10px;padding:14px 16px;transition:border-color .2s,box-shadow .2s,transform .15s;cursor:default}
+.ptag:hover{border-color:var(--blue-border);box-shadow:0 4px 16px rgba(26,111,212,.1);transform:translateY(-2px)}
+.pt-n{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px}
+.pt-t{font-size:11px;font-weight:500;color:var(--gray2);text-transform:uppercase;letter-spacing:.06em}
+.pt-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--success);margin-right:5px;vertical-align:middle}
+
+/* QUALITY */
+.quality-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+@media(max-width:768px){.quality-grid{grid-template-columns:1fr;gap:48px}}
+.q-list{margin-top:36px;border:1px solid var(--gray3);border-radius:14px;overflow:hidden}
+.q-row{padding:20px 22px;border-bottom:1px solid var(--gray3);display:flex;align-items:flex-start;gap:14px;transition:background .2s}
+.q-row:last-child{border-bottom:none}
+.q-row:hover{background:var(--blue-light)}
+.q-chk{width:22px;height:22px;flex-shrink:0;border-radius:50%;background:var(--blue-light);border:1.5px solid var(--blue-border);display:flex;align-items:center;justify-content:center;margin-top:1px}
+.q-chk svg{width:11px;height:11px;stroke:var(--blue);fill:none;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+.q-row strong{font-size:13.5px;font-weight:600;color:var(--ink);display:block;margin-bottom:3px}
+.q-row span{font-size:12.5px;color:var(--gray);line-height:1.6}
+.quality-panel{background:var(--white);border:1px solid var(--blue-border);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(26,111,212,.08)}
+.qp-head{background:var(--blue);padding:24px 28px}
+.qp-head h3{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:4px}
+.qp-head p{font-size:22px;font-weight:700;color:#fff}
+.qp-body{padding:24px 28px}
+.pb{margin-bottom:20px}
+.pb:last-of-type{margin-bottom:0}
+.pb-row{display:flex;justify-content:space-between;margin-bottom:8px}
+.pb-row span:first-child{font-size:12.5px;color:var(--gray);font-weight:500}
+.pb-row span:last-child{font-size:12.5px;font-weight:700;color:var(--blue)}
+.pb-track{height:5px;background:var(--blue-light);border-radius:100px;overflow:hidden}
+.pb-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--blue-dark),var(--blue-mid));width:0%;transition:width 1.2s ease}
+.coa-table{margin-top:24px;padding-top:20px;border-top:1px solid var(--gray3)}
+.coa-r{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f1f5f9;font-size:13px}
+.coa-r:last-child{border-bottom:none}
+.coa-r span:first-child{color:var(--gray)}
+.coa-pass{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;color:var(--success)}
+.coa-pass svg{width:12px;height:12px;stroke:var(--success);fill:none;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+.coa-num{font-weight:700;color:var(--blue);font-size:12.5px}
+
+/* TESTING */
+.test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px}
+@media(max-width:640px){.test-grid{grid-template-columns:1fr}}
+.tstep{background:var(--white);border:1px solid var(--gray3);border-radius:14px;padding:26px 22px;position:relative;overflow:hidden;transition:box-shadow .2s,border-color .2s}
+.tstep:hover{box-shadow:0 6px 28px rgba(26,111,212,.1);border-color:var(--blue-border)}
+.tstep::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue-dark),var(--cyan))}
+.tstep-n{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.tstep-n::after{content:'';flex:1;height:1px;background:var(--gray3)}
+.tstep h3{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px;line-height:1.3}
+.tstep p{font-size:13px;color:var(--gray);line-height:1.7;font-weight:300}
+.tstep-badge{display:inline-block;margin-top:12px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-light);border:1px solid var(--blue-border);padding:3px 10px;border-radius:4px}
+
+/* STANDARDS */
+.std-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+@media(max-width:768px){.std-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.std-grid{grid-template-columns:1fr}}
+.std-card{background:var(--white);border:1px solid var(--gray3);border-radius:14px;padding:26px 22px;transition:box-shadow .2s,border-color .2s}
+.std-card:hover{box-shadow:0 6px 24px rgba(26,111,212,.1);border-color:var(--blue-border)}
+.std-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-light);border:1px solid var(--blue-border);padding:4px 11px;border-radius:5px;margin-bottom:14px}
+.std-card h3{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px;line-height:1.3}
+.std-card p{font-size:13px;color:var(--gray);line-height:1.7;font-weight:300}
+.comp-box{background:var(--blue-pale);border:1px solid var(--blue-border);border-radius:16px;padding:40px 36px;margin-top:56px}
+@media(max-width:600px){.comp-box{padding:28px 20px}}
+.comp-box h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.comp-box>p{font-size:13.5px;color:var(--gray);margin-bottom:28px}
+.comp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:700px){.comp-grid{grid-template-columns:1fr}}
+.comp-item{background:var(--white);border:1px solid var(--blue-border);border-radius:10px;padding:14px 16px;display:flex;align-items:flex-start;gap:10px}
+.comp-chk{width:20px;height:20px;flex-shrink:0;border-radius:50%;background:var(--blue-light);display:flex;align-items:center;justify-content:center;margin-top:1px}
+.comp-chk svg{width:10px;height:10px;stroke:var(--blue);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.comp-item p{font-size:12.5px;color:var(--gray);line-height:1.55}
+
+/* FAQ */
+.faq-layout{display:grid;grid-template-columns:300px 1fr;gap:80px;align-items:start}
+@media(max-width:768px){.faq-layout{grid-template-columns:1fr;gap:40px}}
+.faq-sticky{position:sticky;top:120px}
+.faq-list{border:1px solid var(--gray3);border-radius:14px;overflow:hidden}
+.faq-item{border-bottom:1px solid var(--gray3)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:18px 22px;font-family:'Inter',sans-serif;font-size:14px;font-weight:500;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:color .2s,background .2s}
+.faq-q:hover{background:var(--blue-light);color:var(--blue)}
+.faq-q.open{color:var(--blue);background:var(--blue-pale)}
+.farr{width:16px;height:16px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .22s}
+.faq-q.open .farr{transform:rotate(180deg)}
+.faq-body{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .2s}
+.faq-body.open{max-height:280px;padding-bottom:16px}
+.faq-body p{padding:4px 22px 0;font-size:13.5px;color:var(--gray);line-height:1.78;font-weight:300}
+
+/* CTA */
+.cta-sec{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,#2a8fd4 100%);padding:100px 2rem;text-align:center;position:relative;overflow:hidden}
+.cta-sec::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,.05);pointer-events:none}
+.cta-sec h2{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,52px);font-weight:600;color:#fff;line-height:1.1;margin-bottom:16px;position:relative;z-index:1}
+.cta-sec h2 em{font-style:italic;color:rgba(255,255,255,.75)}
+.cta-sec p{font-size:15px;color:rgba(255,255,255,.75);max-width:480px;margin:0 auto 40px;position:relative;z-index:1;font-weight:300}
+.cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;position:relative;z-index:1}
+.btn-white{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--blue);text-decoration:none;font-size:14px;font-weight:700;padding:14px 28px;border-radius:9px;transition:transform .15s,box-shadow .2s;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.2)}
+.btn-white svg{width:14px;height:14px;stroke:var(--blue);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.btn-outline-w{display:inline-flex;align-items:center;gap:8px;color:#fff;text-decoration:none;font-size:14px;font-weight:500;padding:14px 24px;border-radius:9px;border:1.5px solid rgba(255,255,255,.35);transition:background .2s,border-color .2s,transform .15s}
+.btn-outline-w:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{background:var(--ink);padding:72px 0 32px}
+.foot-grid{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:60px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:32px}
+@media(max-width:768px){.foot-grid{grid-template-columns:1fr 1fr;gap:36px}}
+.foot-brand img{height:40px;object-fit:contain;display:block;margin-bottom:16px}
+.foot-brand p{font-size:12.5px;color:rgba(255,255,255,.35);line-height:1.75;max-width:240px}
+.foot-brand address{margin-top:12px;font-size:12px;color:rgba(255,255,255,.25);font-style:normal}
+.foot-col h4{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:16px}
+.foot-col a{display:block;font-size:13px;color:rgba(255,255,255,.3);text-decoration:none;margin-bottom:10px;transition:color .15s}
+.foot-col a:hover{color:rgba(255,255,255,.8)}
+.foot-legal{font-size:11px;color:rgba(255,255,255,.15);line-height:1.75;margin-bottom:14px}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.foot-copy{font-size:11.5px;color:rgba(255,255,255,.2)}
+.foot-links{display:flex;gap:20px}
+.foot-links a{font-size:12px;color:rgba(255,255,255,.2);text-decoration:none;transition:color .15s}
+.foot-links a:hover{color:rgba(255,255,255,.6)}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.r.v{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCE -->
+<div class="ann">
+  <div class="ann-track">
+    <span class="ann-item">All Compounds Independently Tested<span class="ann-dot"></span></span>
+    <span class="ann-item">Full CoA Documentation Available<span class="ann-dot"></span></span>
+    <span class="ann-item">For Research Use Only<span class="ann-dot"></span></span>
+    <span class="ann-item">Australian Research Supplier<span class="ann-dot"></span></span>
+    <span class="ann-item">99%+ Minimum Purity Guaranteed<span class="ann-dot"></span></span>
+    <span class="ann-item">Not For Human Consumption<span class="ann-dot"></span></span>
+    <span class="ann-item">Third-Party Lab Verified<span class="ann-dot"></span></span>
+    <span class="ann-item">All Compounds Independently Tested<span class="ann-dot"></span></span>
+    <span class="ann-item">Full CoA Documentation Available<span class="ann-dot"></span></span>
+    <span class="ann-item">For Research Use Only<span class="ann-dot"></span></span>
+    <span class="ann-item">Australian Research Supplier<span class="ann-dot"></span></span>
+    <span class="ann-item">99%+ Minimum Purity Guaranteed<span class="ann-dot"></span></span>
+    <span class="ann-item">Not For Human Consumption<span class="ann-dot"></span></span>
+    <span class="ann-item">Third-Party Lab Verified<span class="ann-dot"></span></span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="https://genexpeptides.com.au/" target="_blank" rel="noopener" class="nav-logo">
+    <img src="https://genexpeptides.com.au/wp-content/uploads/2026/04/cropped-logo-1.png" alt="Gen Ex Peptides"/>
+  </a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#quality">Quality</a>
+    <a href="#testing">Testing</a>
+    <a href="#standards">Standards</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div class="nav-right">
+    <a href="https://genexpeptides.com.au//index.php/product-category/shop-all-australian-aminos/" target="_blank" rel="noopener" class="nav-cta">
+      Explore Our Work <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  <a href="#about" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
+  <a href="#quality" onclick="document.getElementById('mobileMenu').classList.remove('open')">Quality</a>
+  <a href="#testing" onclick="document.getElementById('mobileMenu').classList.remove('open')">Testing</a>
+  <a href="#standards" onclick="document.getElementById('mobileMenu').classList.remove('open')">Standards</a>
+  <a href="#faq" onclick="document.getElementById('mobileMenu').classList.remove('open')">FAQ</a>
+  <a href="https://genexpeptides.com.au//index.php/product-category/shop-all-australian-aminos/" target="_blank" rel="noopener" style="background:var(--blue);color:#fff;margin-top:12px">Shop Now →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">Australian Research Supplier</div>
+      <h1>Premium Peptides.<br><em>Proven Purity.</em></h1>
+      <p class="hero-sub">Gen Ex Peptides supplies independently verified, fully documented research compounds to laboratories and qualified researchers across Australia — backed by six-point analytical testing on every batch.</p>
+      <div class="hero-btns">
+        <a href="https://genexpeptides.com.au//index.php/contact/" target="_blank" rel="noopener" class="btn-secondary">Contact Our Team</a>
+        <a href="https://genexpeptides.com.au//index.php/product-category/shop-all-australian-aminos/" target="_blank" rel="noopener" class="btn-primary">
+          Explore Our Work <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>99%+ Purity Verified</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>CoA Every Batch</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>AU Dispatched</div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-top">
+        <h3>Batch Certificate Summary</h3>
+        <p>99.4% Purity</p>
+        <span>Current batch · Independently verified</span>
+      </div>
+      <div class="hero-card-body">
+        <div class="hc-row"><span class="hc-label">HPLC Purity</span><span class="hc-val">99.4%</span></div>
+        <div class="hc-row"><span class="hc-label">Identity (MS)</span><span class="hc-pass">Confirmed</span></div>
+        <div class="hc-row"><span class="hc-label">Endotoxin (LAL)</span><span class="hc-val">&lt; 1 EU/mg</span></div>
+        <div class="hc-row"><span class="hc-label">Residual Solvents</span><span class="hc-pass">ICH Q3C Pass</span></div>
+        <div class="hc-row"><span class="hc-label">Heavy Metals</span><span class="hc-pass">Within Limits</span></div>
+        <div class="hc-row"><span class="hc-label">Release Status</span><span class="hc-pass">✓ Authorised</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-strip-inner">
+    <div class="trust-pill"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>ISO/IEC 17025 Labs</div>
+    <div class="trust-pill"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Public CoA Access</div>
+    <div class="trust-pill"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>72h Processing</div>
+    <div class="trust-pill"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Research Grade Only</div>
+    <div class="trust-pill"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>6-Point Assay Protocol</div>
+  </div>
+</div>
+
+<!-- WARN -->
+<div class="warn">
+  <p><strong>⚠ Research Use Only:</strong> All products are strictly for laboratory and research purposes only. Not for human consumption of any kind. Not evaluated by the TGA or US FDA. Not intended to diagnose, treat, cure or prevent any disease.</p>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-layout">
+      <div>
+        <p class="eyebrow r">About Gen Ex Peptides</p>
+        <h2 class="title r d1">Australia's Most <em>Documented</em> Peptide Supplier</h2>
+        <p class="lead r d2">Gen Ex Peptides was built out of a simple frustration: research compound suppliers making quality claims they couldn't substantiate. We built our entire operation around one principle — every claim we make about our compounds is verifiable, documented, and independently confirmed.</p>
+        <p class="lead r d2" style="margin-top:16px">We are not a general distributor. We are a specialist Australian research compound supplier, and peptides are all we do.</p>
+        <div class="feat-list r d3">
+          <div class="feat"><div class="feat-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h3>Independent Verification</h3><p>Every batch tested by ISO/IEC 17025 accredited labs with no financial stake in the result.</p></div></div>
+          <div class="feat"><div class="feat-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><h3>Radical Transparency</h3><p>Full CoA documentation publicly accessible — no account required, no purchase necessary.</p></div></div>
+          <div class="feat"><div class="feat-ico"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><h3>Australian Dispatch</h3><p>Locally based, locally dispatched. Orders processed within 72 hours with full tracking.</p></div></div>
+        </div>
+      </div>
+      <div class="stat-boxes r d2">
+        <div class="sbox"><div class="sbox-n">99%+</div><div class="sbox-l">Minimum Purity</div></div>
+        <div class="sbox"><div class="sbox-n">6</div><div class="sbox-l">Assays Per Batch</div></div>
+        <div class="sbox"><div class="sbox-n">100%</div><div class="sbox-l">Public CoA</div></div>
+        <div class="sbox"><div class="sbox-n">0</div><div class="sbox-l">Sub-Spec Releases</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PEPTIDES -->
+<section class="sec-alt" style="padding:72px 0">
+  <div class="wrap">
+    <div style="text-align:center;max-width:560px;margin:0 auto">
+      <p class="eyebrow r" style="justify-content:center">Our Catalog</p>
+      <h2 class="title r d1" style="margin-bottom:12px">Research Compounds<br><em>We Stand Behind</em></h2>
+      <p class="lead r d2" style="text-align:center;margin:0 auto">Every compound stocked only when we can supply full batch documentation and meet our six-point testing protocol.</p>
+    </div>
+    <div class="peptides-grid r d2">
+      <div class="ptag"><div class="pt-n"><span class="pt-dot"></span>Semaglutide</div><div class="pt-t">GLP-1 Agonist</div></div>
+      <div class="ptag"><div class="pt-n"><span class="pt-dot"></span>Tirzepatide</div><div class="pt-t">GLP-1/GIP</div></div>
+      <div class="ptag"><div class="pt-n"><span class="pt-dot"></span>BPC-157</div><div class="pt-t">Healing Peptide</div></div>
+      <div class="ptag"><div class="pt-n"><span class="pt-dot"></span>TB-500</div><div class="pt-t">Thymosin Beta-4</div></div>
+      <div class="ptag"><div class="pt-n"><span class="pt-dot"></span>CJC-1295</div><div class="pt-t">GHRH Analogue</div></div>
+      <div class="ptag"><div class="pt-n"><span class="pt-dot"></span>Ipamorelin</div><div class="pt-t">GH Secretagogue</div></div>
+      <div class="ptag"><div class="pt-n"><span class="pt-dot"></span>Sermorelin</div><div class="pt-t">GHRH Fragment</div></div>
+      <div class="ptag"><div class="pt-n"><span class="pt-dot"></span>NAD+</div><div class="pt-t">Coenzyme</div></div>
+      <div class="ptag"><div class="pt-n"><span class="pt-dot"></span>Tesamorelin</div><div class="pt-t">GHRH Analogue</div></div>
+      <div class="ptag"><div class="pt-n"><span class="pt-dot"></span>Selank</div><div class="pt-t">Anxiolytic Peptide</div></div>
+      <div class="ptag"><div class="pt-n"><span class="pt-dot"></span>Semax</div><div class="pt-t">Nootropic Peptide</div></div>
+      <div class="ptag"><div class="pt-n"><span class="pt-dot"></span>GHK-Cu</div><div class="pt-t">Copper Peptide</div></div>
+    </div>
+    <div style="text-align:center;margin-top:36px">
+      <a href="https://genexpeptides.com.au//index.php/product-category/shop-all-australian-aminos/" target="_blank" rel="noopener" class="btn-primary r d3">View Full Catalog <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- QUALITY -->
+<section id="quality">
+  <div class="wrap">
+    <div class="quality-grid">
+      <div>
+        <p class="eyebrow r">Quality Assurance</p>
+        <h2 class="title r d1">Eight Checkpoints.<br><em>No Shortcuts.</em></h2>
+        <p class="lead r d2">Quality assurance at Gen Ex is not a final inspection. It is integrated through every stage of how a compound moves from synthesis to researcher.</p>
+        <ul class="q-list r d2" style="list-style:none">
+          <li class="q-row"><span class="q-chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><div><strong>Certified Raw Material Sourcing</strong><span>Only audited, verified synthesis partners qualify. No brokers, no unknowns.</span></div></li>
+          <li class="q-row"><span class="q-chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><div><strong>Incoming Material Quarantine</strong><span>Every shipment quarantined and identity-checked before entering inventory.</span></div></li>
+          <li class="q-row"><span class="q-chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><div><strong>Independent Analytical Testing</strong><span>Multiple ISO/IEC 17025 accredited labs, blind testing — no incentive to pass a batch.</span></div></li>
+          <li class="q-row"><span class="q-chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><div><strong>Raw Data Review</strong><span>We review underlying chromatography traces — not just the lab's pass/fail summary.</span></div></li>
+          <li class="q-row"><span class="q-chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><div><strong>Certificate of Analysis — Every Lot</strong><span>Public CoA with numerical results. Available before purchase, no login required.</span></div></li>
+          <li class="q-row"><span class="q-chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><div><strong>Two-Party Batch Release</strong><span>Formal sign-off from two reviewers before any batch enters active inventory.</span></div></li>
+        </ul>
+      </div>
+      <div class="r d3">
+        <div class="quality-panel">
+          <div class="qp-head"><h3>Purity Benchmarks</h3><p>Batch-Level Analytics</p></div>
+          <div class="qp-body">
+            <div class="pb"><div class="pb-row"><span>Peptide Identity Confirmation</span><span>100%</span></div><div class="pb-track"><div class="pb-fill" data-w="100%"></div></div></div>
+            <div class="pb"><div class="pb-row"><span>Minimum Purity (HPLC)</span><span>99%+</span></div><div class="pb-track"><div class="pb-fill" data-w="99%"></div></div></div>
+            <div class="pb"><div class="pb-row"><span>Independent Lot Verification</span><span>100%</span></div><div class="pb-track"><div class="pb-fill" data-w="100%"></div></div></div>
+            <div class="pb"><div class="pb-row"><span>Batch Traceability</span><span>100%</span></div><div class="pb-track"><div class="pb-fill" data-w="100%"></div></div></div>
+            <div class="coa-table">
+              <div class="coa-r"><span>HPLC Purity</span><span class="coa-num">≥ 99.0%</span></div>
+              <div class="coa-r"><span>Identity (MS)</span><div class="coa-pass"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Confirmed</div></div>
+              <div class="coa-r"><span>Endotoxin (LAL)</span><span class="coa-num">&lt; 1 EU/mg</span></div>
+              <div class="coa-r"><span>Residual Solvents</span><div class="coa-pass"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>ICH Q3C Pass</div></div>
+              <div class="coa-r"><span>Heavy Metals</span><div class="coa-pass"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Within Limits</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TESTING -->
+<section id="testing" class="sec-alt">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end" class="r">
+      <div>
+        <p class="eyebrow">Testing Protocol</p>
+        <h2 class="title">Six Assays.<br><em>Every Single Batch.</em></h2>
+      </div>
+      <p class="lead" style="padding-bottom:4px">Our testing protocol addresses the most consequential failure modes in research compound supply — identity substitution, purity degradation, biological contamination, and trace impurities.</p>
+    </div>
+    <div class="test-grid r d2">
+      <div class="tstep"><div class="tstep-n">Assay 01</div><h3>HPLC Purity Analysis</h3><p>Quantitative purity assessment separating compound from impurities. We report the actual numerical result — not just whether a threshold was met. Minimum acceptance: 99.0%.</p><span class="tstep-badge">Purity Quantification</span></div>
+      <div class="tstep"><div class="tstep-n">Assay 02</div><h3>Mass Spectrometry (MS)</h3><p>Confirms molecular identity by measuring mass-to-charge ratio of ionised fragments. Purity alone is insufficient without independent identity confirmation.</p><span class="tstep-badge">Identity Confirmation</span></div>
+      <div class="tstep"><div class="tstep-n">Assay 03</div><h3>Bacterial Endotoxin (LAL)</h3><p>Quantifies endotoxin levels using the LAL assay. Critical for cell-based research where contamination can confound results. EU/mg result published in CoA.</p><span class="tstep-badge">LAL Assay</span></div>
+      <div class="tstep"><div class="tstep-n">Assay 04</div><h3>Residual Solvent Analysis</h3><p>GC headspace analysis confirms ICH Q3C compliance. Tested for solvents specific to each compound's synthesis pathway.</p><span class="tstep-badge">GC Headspace</span></div>
+      <div class="tstep"><div class="tstep-n">Assay 05</div><h3>Heavy Metal Screening</h3><p>ICP-MS screens for lead, mercury, arsenic, and cadmium. Quantitative values reported — not pass/fail statements.</p><span class="tstep-badge">ICP-MS</span></div>
+      <div class="tstep"><div class="tstep-n">Assay 06</div><h3>Water Content (Karl Fischer)</h3><p>Determines water content as a percentage of total mass. Essential for gravimetric measurement accuracy and long-term compound stability.</p><span class="tstep-badge">Karl Fischer Titration</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- STANDARDS -->
+<section id="standards">
+  <div class="wrap">
+    <div style="text-align:center;max-width:600px;margin:0 auto">
+      <p class="eyebrow r" style="justify-content:center">Regulatory Standards</p>
+      <h2 class="title r d1" style="margin-bottom:12px">Transparent About What We Are —<br><em>And What We Are Not.</em></h2>
+      <p class="lead r d2" style="text-align:center;margin:0 auto">Gen Ex operates within strict regulatory boundaries. No ambiguity, no grey areas.</p>
+    </div>
+    <div class="std-grid r d2">
+      <div class="std-card"><div class="std-tag">TGA</div><h3>Not TGA Evaluated</h3><p>Products are not listed, registered, or evaluated by the Therapeutic Goods Administration for therapeutic use in Australia.</p></div>
+      <div class="std-card"><div class="std-tag">FDA</div><h3>Not FDA Evaluated</h3><p>Products have not been evaluated by the US Food and Drug Administration for safety, efficacy, or any medical claim.</p></div>
+      <div class="std-card"><div class="std-tag">R&D</div><h3>Research Use Only</h3><p>All compounds sold strictly for laboratory, research, and analytical purposes. Not for human or animal consumption.</p></div>
+      <div class="std-card"><div class="std-tag">503A</div><h3>Not a Compounding Pharmacy</h3><p>Gen Ex is not a compounding pharmacy or outsourcing facility. We supply researchers, not patients or clinical practitioners.</p></div>
+      <div class="std-card"><div class="std-tag">GMP</div><h3>GMP Principles</h3><p>Products manufactured under Good Manufacturing Practice principles ensuring consistency, quality, and traceability.</p></div>
+      <div class="std-card"><div class="std-tag">CoA</div><h3>Full Documentation</h3><p>Certificate of Analysis from an independent third-party laboratory accompanies every product lot. Publicly accessible.</p></div>
+    </div>
+    <div class="comp-box r d2">
+      <h3>Our Research-Only Commitments</h3>
+      <p>Six principles that govern every order Gen Ex Peptides fulfils.</p>
+      <div class="comp-grid">
+        <div class="comp-item"><div class="comp-chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><p>All peptides sold for research, laboratory, or analytical use only</p></div>
+        <div class="comp-item"><div class="comp-chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><p>Not for human or veterinary consumption under any circumstances</p></div>
+        <div class="comp-item"><div class="comp-chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><p>Not evaluated by the TGA or US Food &amp; Drug Administration</p></div>
+        <div class="comp-item"><div class="comp-chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><p>Not a compounding pharmacy under applicable legislation</p></div>
+        <div class="comp-item"><div class="comp-chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><p>Not intended to diagnose, treat, cure, or prevent any disease</p></div>
+        <div class="comp-item"><div class="comp-chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><p>Full CoA documentation publicly available for every batch supplied</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section id="faq" class="sec-alt">
+  <div class="wrap">
+    <div class="faq-layout">
+      <div class="faq-sticky">
+        <p class="eyebrow r">FAQ</p>
+        <h2 class="title r d1">Common<br><em>Questions</em></h2>
+        <p class="lead r d2" style="margin-bottom:28px;font-size:14px">Answered directly — because ambiguity is not something researchers should tolerate from their suppliers.</p>
+        <a href="https://genexpeptides.com.au//index.php/product-category/shop-all-australian-aminos/" target="_blank" rel="noopener" class="btn-primary r d3" style="display:inline-flex;font-size:13px;padding:12px 22px">Visit Gen Ex <svg viewBox="0 0 24 24" style="width:13px;height:13px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </div>
+      <div class="faq-list r d2">
+        <div class="faq-item"><button class="faq-q" onclick="faq(this)">Are Gen Ex products intended for human use?<svg class="farr" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body"><p>No. All products are strictly for research, laboratory, and analytical purposes only. Not intended for human or veterinary consumption. Gen Ex Peptides is a research compound supplier — not a clinical, pharmaceutical, or therapeutic supply organisation.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="faq(this)">What does "independently tested" actually mean?<svg class="farr" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body"><p>Independent testing means laboratories are ISO/IEC 17025 accredited, have no financial relationship with Gen Ex beyond testing fees, and do not know which synthesis partner produced the material. Structurally independent — not just tested by a different person in our organisation.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="faq(this)">Can I access a CoA before placing an order?<svg class="farr" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body"><p>Yes. Our Certificate of Analysis documentation is publicly accessible without account creation or purchase requirement. Contact our technical team if you have questions before committing to an order.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="faq(this)">Is Gen Ex a compounding pharmacy?<svg class="farr" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body"><p>No. Gen Ex Peptides is a research chemical supplier — not a compounding pharmacy, clinical facility, or outsourcing facility. We supply qualified researchers, not patients or medical practitioners. Our compounds are not for human consumption of any kind.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="faq(this)">What happens if a batch fails your protocol?<svg class="farr" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body"><p>Any batch failing any single point in our six-point protocol is rejected and does not enter active inventory. We do not offer sub-specification batches at reduced prices. Failed batches are returned or destroyed — no exceptions, ever.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="faq(this)">Do you ship throughout Australia?<svg class="farr" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body"><p>Yes. Gen Ex Peptides is an Australian-based supplier dispatching throughout Australia. Orders processed within 72 hours with full tracking. Cold-chain shipments use validated packaging with temperature monitoring included.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="faq(this)">How do I contact Gen Ex Peptides?<svg class="farr" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-body"><p>Visit genexpeptides.com.au/contact to reach our team. We respond to all research inquiries promptly with substantive technical answers — not generic customer service scripts.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-sec">
+  <h2>Australia's Most <em>Documented</em><br>Peptide Supplier</h2>
+  <p>Browse our full catalog of independently verified, fully documented research-grade peptides — dispatched from Australia with precision.</p>
+  <div class="cta-btns">
+    <a href="https://genexpeptides.com.au//index.php/product-category/shop-all-australian-aminos/" target="_blank" rel="noopener" class="btn-white">Browse Full Catalog <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <a href="https://genexpeptides.com.au//index.php/contact/" target="_blank" rel="noopener" class="btn-outline-w">Contact Our Team</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="https://genexpeptides.com.au/wp-content/uploads/2026/04/cropped-logo-1.png" alt="Gen Ex Peptides"/>
+        <p>Australian research-grade peptide supplier for laboratories and qualified researchers. All products for R&D use only.</p>
+        <address>genexpeptides.com.au · Australia</address>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <a href="#about">About</a>
+        <a href="#quality">Quality</a>
+        <a href="#testing">Testing</a>
+        <a href="#standards">Standards</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="foot-col">
+        <h4>Products</h4>
+        <a href="https://genexpeptides.com.au//index.php/product-category/shop-all-australian-aminos/" target="_blank" rel="noopener">All Peptides</a>
+        <a href="https://genexpeptides.com.au//index.php/product-category/shop-all-australian-aminos/" target="_blank" rel="noopener">Research Compounds</a>
+        <a href="https://genexpeptides.com.au//index.php/product-category/shop-all-australian-aminos/" target="_blank" rel="noopener">CoA Library</a>
+        <a href="https://genexpeptides.com.au//index.php/product-category/shop-all-australian-aminos/" target="_blank" rel="noopener">Order Tracking</a>
+      </div>
+      <div class="foot-col">
+        <h4>Legal</h4>
+        <a href="https://genexpeptides.com.au//index.php/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://genexpeptides.com.au//index.php/about-us/" target="_blank" rel="noopener">Terms &amp; Conditions</a>
+        <a href="https://genexpeptides.com.au//index.php/refund_returns/" target="_blank" rel="noopener">Returns Policy</a>
+        <a href="https://genexpeptides.com.au//index.php/contact/" target="_blank" rel="noopener">Shipping Policy</a>
+        <a href="https://genexpeptides.com.au//index.php/contact/" target="_blank" rel="noopener">Contact Us</a>
+      </div>
+    </div>
+    <p class="foot-legal">All products supplied by Gen Ex Peptides are intended exclusively for laboratory research purposes by qualified scientific professionals. Not for human consumption. Not intended to diagnose, treat, cure, or prevent any disease. Not evaluated by the TGA or FDA. Gen Ex Peptides is not a compounding pharmacy or outsourcing facility.</p>
+    <div class="foot-bottom">
+      <div class="foot-copy">© 2026 Gen Ex Peptides. All rights reserved.</div>
+      <div class="foot-links">
+        <a href="https://genexpeptides.com.au//index.php/privacy-policy/" target="_blank" rel="noopener">Privacy</a>
+        <a href="https://genexpeptides.com.au//index.php/about-us/" target="_blank" rel="noopener">Terms</a>
+        <a href="https://genexpeptides.com.au//index.php/contact/" target="_blank" rel="noopener">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// REVEAL
+const rs=document.querySelectorAll('.r');
+const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');ro.unobserve(e.target);}});},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+rs.forEach(el=>ro.observe(el));
+
+// PURITY BARS
+const po=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.pb-fill').forEach((b,i)=>{setTimeout(()=>{b.style.width=b.dataset.w;},i*150);});po.unobserve(e.target);}});},{threshold:.3});
+document.querySelectorAll('.quality-panel').forEach(el=>po.observe(el));
+
+// FAQ
+function faq(btn){
+  const body=btn.nextElementSibling,isOpen=btn.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(b=>{b.classList.remove('open');b.nextElementSibling.classList.remove('open');});
+  if(!isOpen){btn.classList.add('open');body.classList.add('open');}
+}
+</script>
+</body>
+</html>
